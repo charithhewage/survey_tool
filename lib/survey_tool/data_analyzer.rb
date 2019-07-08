@@ -9,7 +9,7 @@ module SurveyTool
     def analize!
       puts "The participation percentage:\t\t #{participation_percentage} %"
       puts "Total participant count:\t\t #{responses_count}"
-      puts "The average for each rating question: \t#{average_for_rating_question}"
+      puts "The average for each rating question: \t #{average_for_rating_question}"
     end
 
     def participation_percentage
@@ -20,27 +20,26 @@ module SurveyTool
       @survey.responses.select{ |response| response[:submitted_at] != nil }
     end
 
-    #Optimized Solution
     def average_for_rating_question
-      rating_question_indexes = []
-      rating_sum = 0
+      rating_question_indexes               = []
+      submited_answers_for_rating_questions = []
 
 
-      @survey.questions.each_with_index do |q, index|
-        if q.type.to_s == "ratingquestion"
+      @survey.questions.each_with_index do |qestion, index|
+        if qestion.type.to_s == "ratingquestion"
           rating_question_indexes << index
         end
       end
 
       @survey.responses.each do |response|
+        next if response[:submitted_at].nil?
 
-        rating_sum += response[:responses].select
-                                .with_index { |val, index| rating_question_indexes.include?(index) }
-                                .inject(0) {|sum,i| sum += i.to_i }
-        # is_fibonacci?(index)
+        response[:responses].select
+            .with_index { |value, index| submited_answers_for_rating_questions << value.to_i if rating_question_indexes.include?(index) && !value.nil? }
       end
 
-      (rating_sum/rating_question_indexes.count)
+      (submited_answers_for_rating_questions.sum/ submited_answers_for_rating_questions.size)
+      
     end
 
     private
