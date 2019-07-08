@@ -1,6 +1,6 @@
 class Application
 
   def cli
-    # Your implementation probably starts here...
+    puts "hellow"
   end
 end
