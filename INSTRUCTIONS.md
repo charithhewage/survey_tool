@@ -23,6 +23,7 @@ $ bundle install
 ### Run unit & integration tests
 ```
 $ bundle exec rspec
+$ bundle exec cucumber features
 ```
 
 ### Run the application.
