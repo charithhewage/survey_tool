@@ -5,7 +5,7 @@ module SurveyTool
     class InputParser
       attr_reader :survey_file, :survey_responses_file
       
-      def initialize(survey_file = nil, survey_responses_file = nil )
+      def initialize(survey_file: , survey_responses_file: )
         @survey_file            = File.new(survey_file)
         @survey_responses_file  = File.new(survey_responses_file)
       end
@@ -23,7 +23,7 @@ module SurveyTool
           @survey_responses_data << {
             email:        line[0],
             employee_id:  line[1],
-            submitted_at:  line[2],
+            submitted_at: line[2],
             responses:    line[3..-1]
           }
         end

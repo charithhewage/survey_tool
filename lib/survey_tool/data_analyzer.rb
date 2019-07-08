@@ -8,7 +8,7 @@ module SurveyTool
 
     def analize!
       puts "The participation percentage:\t\t #{participation_percentage} %"
-      puts "Total participant count:\t\t #{responses_count}"
+      puts "Total participant count:\t\t #{total_participants.size}"
       puts "The average for each rating question: \t #{average_for_rating_question}"
     end
 
@@ -17,7 +17,7 @@ module SurveyTool
     end
 
     def total_participants
-      @survey.responses.select{ |response| response[:submitted_at] != nil }
+      @survey.responses.select{ |response| !response[:submitted_at].nil? }
     end
 
     def average_for_rating_question
@@ -37,6 +37,8 @@ module SurveyTool
         response[:responses].select
             .with_index { |value, index| submited_answers_for_rating_questions << value.to_i if rating_question_indexes.include?(index) && !value.nil? }
       end
+      
+      return 0 if submited_answers_for_rating_questions.size.zero?
 
       (submited_answers_for_rating_questions.sum/ submited_answers_for_rating_questions.size)
       

@@ -21,7 +21,10 @@ module SurveyTool
 
     #bundle exec bin/survey-tool exucute --survey [path/to/survey.csv] --survey_response [path/to/survey_response.csv]
     def exucute
-      @file_inputs  = SurveyTool::Cli::InputParser.new(options[:survey], options[:survey_response])
+      @file_inputs  = SurveyTool::Cli::InputParser.new({
+                                    survey_file: options[:survey], 
+                                    survey_responses_file: options[:survey_response]
+                                  })
       
       @survey_data            = @file_inputs.generate_survey_data
       @survey_responses_data  = @file_inputs.generate_survey_responses_data
