@@ -35,7 +35,7 @@ This application is developed as a command line interface (CLI). Before running 
 
 * INSTRUCTIONS: This file includes how to run the project and instructions.
 
-bin/survey-tool: This file is the main and executable file of the project. If you want to run this project you have to call this file via command line interface (CLI)
+* bin/survey-tool: This file is the main and executable file of the project. If you want to run this project you have to call this file via command line interface (CLI)
 
 * example-data: This folder includes all the sample survey data with each responses as a .csv file formats. This application will process only the csv file formats at this stage. If you want to improve this with other formats, Pull requests are welcome :)
 
@@ -52,7 +52,7 @@ bundle exec bin/survey-tool exucute --survey example-data/survey-1.csv --survey_
 ```
 The participation percentage:         83.33 %
 Total participant count:              6
-The average for each rating question: 21
+The average for each rating question: 4
 ```
 
 ### Example 2
@@ -63,7 +63,7 @@ bundle exec bin/survey-tool exucute --survey example-data/survey-2.csv --survey_
 ```
 The participation percentage:           100.0 %
 Total participant count:                5
-The average for each rating question:   22
+The average for each rating question:   4
 ```
 
 ### Example 3
@@ -73,8 +73,8 @@ bundle exec bin/survey-tool exucute --survey example-data/survey-3.csv --survey_
 ### Expected Output
 ```
 The participation percentage:           0.0 %
-Total participant count:                5
-The average for each rating question:   19
+Total participant count:                0
+The average for each rating question:   0
 ```
 
 
