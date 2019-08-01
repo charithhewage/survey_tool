@@ -46,7 +46,7 @@ I have used popular Ruby gem called `Thor` to implement command line interface a
 
 ### Example 1 
 ```
-bundle exec bin/survey-tool exucute --survey example-data/survey-1.csv --survey_response example-data/survey-1-responses.csv
+bundle exec bin/survey-tool execute --survey example-data/survey-1.csv --survey_response example-data/survey-1-responses.csv
 ```
 ### Expected Output
 ```
@@ -57,7 +57,7 @@ The average for each rating question: 4
 
 ### Example 2
 ```
-bundle exec bin/survey-tool exucute --survey example-data/survey-2.csv --survey_response example-data/survey-2-responses.csv
+bundle exec bin/survey-tool execute --survey example-data/survey-2.csv --survey_response example-data/survey-2-responses.csv
 ```
 ### Expected Output
 ```
@@ -68,7 +68,7 @@ The average for each rating question:   4
 
 ### Example 3
 ```
-bundle exec bin/survey-tool exucute --survey example-data/survey-3.csv --survey_response example-data/survey-3-resonses.csv
+bundle exec bin/survey-tool execute --survey example-data/survey-3.csv --survey_response example-data/survey-3-resonses.csv
 ```
 ### Expected Output
 ```
