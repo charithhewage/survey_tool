@@ -23,7 +23,7 @@ Feature: Survey 1 with example data should Analize Following information
     employee5@abc.xyz,6,,,,,,
     """
 
-    When I run "bin/survey-tool exucute --survey survey-1.csv --survey_response survey-1-responses.csv"
+    When I run "bin/survey-tool execute --survey survey-1.csv --survey_response survey-1-responses.csv"
     Then the output should contain "The participation percentage:\t\t 83.33 %"
     Then the output should contain "Total participant count:\t\t 5"
     Then the output should contain "The average for each rating question: \t 4"

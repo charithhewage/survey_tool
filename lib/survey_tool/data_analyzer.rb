@@ -36,6 +36,13 @@ module SurveyTool
 
         response[:responses].select
             .with_index { |value, index| submited_answers_for_rating_questions << value.to_i if rating_question_indexes.include?(index) && !value.nil? }
+
+        # response[:responses].select
+        #   .with_index do |value, index| 
+        #     if rating_question_indexes.include?(index) && !value.nil?
+        #       submited_answers_for_rating_questions << value.to_i
+        #     end
+        #   end
       end
       
       return 0 if submited_answers_for_rating_questions.size.zero?

@@ -19,8 +19,8 @@ module SurveyTool
                   required: true, 
                   banner: "Please provide the servey response file with this" 
 
-    #bundle exec bin/survey-tool exucute --survey [path/to/survey.csv] --survey_response [path/to/survey_response.csv]
-    def exucute
+    #bundle exec bin/survey-tool execute --survey [path/to/survey.csv] --survey_response [path/to/survey_response.csv]
+    def execute
       @file_inputs  = SurveyTool::Cli::InputParser.new({
                                     survey_file: options[:survey], 
                                     survey_responses_file: options[:survey_response]
