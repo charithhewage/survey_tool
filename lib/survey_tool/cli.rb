@@ -1,7 +1,6 @@
 require 'thor'
 
 require 'survey_tool/cli/input_parser'
-require 'survey_tool/survey_factory'
 require 'survey_tool/data_analyzer'
 
 module SurveyTool
