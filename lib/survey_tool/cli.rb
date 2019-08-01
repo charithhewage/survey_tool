@@ -29,12 +29,9 @@ module SurveyTool
       @survey_data            = @file_inputs.generate_survey_data
       @survey_responses_data  = @file_inputs.generate_survey_responses_data
 
-      @survey_factory   = SurveyFactory.new({
-                            survey_data: @survey_data,
-                            survey_responses_data: @survey_responses_data
-                          })
-
-      @survey   = @survey_factory.build_survey
+      @survey = Survey.new({
+                  survey_data: @survey_data,
+                  survey_responses_data: @survey_responses_data })
 
       @data_analyzer = DataAnalyzer.new({survey: @survey})
       @data_analyzer.analize!
